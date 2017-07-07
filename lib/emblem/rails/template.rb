@@ -1,5 +1,4 @@
 require 'sprockets'
-require 'sprockets/engines'
 require 'ember/handlebars/template'
 require 'barber-emblem'
 
