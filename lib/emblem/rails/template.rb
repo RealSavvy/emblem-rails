@@ -6,13 +6,13 @@ module Emblem
   module Rails
     class Template < Ember::Handlebars::Template
 
-      def evaluate(scope, locals, &block)
+      def call(input)
         target = global_template_target(scope)
-        raw = raw?(scope)
+        raw = raw?(input[:filename])
 
-        template = data
+        template = input[:data]
 
-        if configuration.precompile
+        if config.precompile
           if raw
             template = precompile_emblem(template)
           else
